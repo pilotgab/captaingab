@@ -16,7 +16,7 @@ jobs:
       - name: Set up Java
         uses: actions/setup-java@v2
         with:
-          java-version: '11' # Set the Java version you need
+          java-version: 11 # Set the Java version you need
 
       - name: Build with Maven
         run: mvn clean install
