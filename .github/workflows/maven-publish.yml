@@ -3,16 +3,27 @@
 name: Maven Package
 
 on:
-  release:
-    types: [created]
+  push:
+    branches:
+      - main 
 
 jobs:
-  build:
 
+  nodejs-setup:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js 16
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
+  build:
+  needs: nodejs-setup
+
+  runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
