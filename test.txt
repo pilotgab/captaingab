@@ -1,4 +1,2 @@
 #just tesing jenkins jobs 
 #apple lapto[ apple great 
-#github action is the main cicd tools now 
-#apple
