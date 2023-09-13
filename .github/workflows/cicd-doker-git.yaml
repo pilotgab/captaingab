@@ -7,15 +7,16 @@ on:
 
 jobs:
   node-setup:
+  runs-on: ubuntu-latest
   steps:
-     - name: preparing-node
-       run: node -v
-       uses: actions/setup-node@v3
-       with:
-         node-version: 16
-     - run: node -v
+      - run: node -v
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: node -v
 
   build:
+    needs: setup
     runs-on: ubuntu-latest
 
     steps:
