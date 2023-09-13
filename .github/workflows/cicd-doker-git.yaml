@@ -9,15 +9,12 @@ jobs:
   node-setup:
     runs-on: ubuntu-latest
   steps:
-    - run: node -v
       uses: actions/setup-node@v3
       with:
         node-version: 16
-    - run: node -v
-
 
   build:
-    needs: setup
+    needs: node-setup
     runs-on: ubuntu-latest
 
     steps:
@@ -27,7 +24,7 @@ jobs:
       - name: Set up Java
         uses: actions/setup-java@v2
         with:
-          java-version: 11 # Set the Java version you need
+          java-version: 11  #Set the Java version you need
 
       - name: Build with Maven
         run: mvn clean install
