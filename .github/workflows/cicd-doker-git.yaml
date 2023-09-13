@@ -8,15 +8,15 @@ on:
 jobs:
   node-setup:
     runs-on: ubuntu-latest
-  steps:
-      uses: actions/setup-node@v3
-      with:
-        node-version: 16
+    steps:
+      - name: node-setup
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
 
   build:
     needs: node-setup
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
