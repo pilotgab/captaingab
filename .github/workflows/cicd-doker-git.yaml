@@ -18,6 +18,10 @@ jobs:
     needs: node-setup
     runs-on: ubuntu-latest
     steps:
+      - name: node-setup
+        uses: actions/setup-node@v3
+        with:
+            node-version: 16
       - name: Checkout code
         uses: actions/checkout@v2
 
