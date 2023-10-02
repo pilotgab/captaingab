@@ -1,4 +1,4 @@
-apiVersion: v1
+apiVersion: v1 #this means servers okay
 kind: Service
 metadata:
   name: vprocache01
